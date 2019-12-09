@@ -36,20 +36,20 @@ TGT_CFLAGS	+= $(STANDARD_FLAGS)
 # ARFLAGS	= rcsv
 ARFLAGS		= rcs
 
-OBJS		= adc.o adc_common_v1.o can.o desig.o flash.o gpio.o \
+OBJS		+= adc.o ../common/adc_common_v1.o ../can.o ../desig.o flash.o gpio.o \
                   rcc.o rtc.o timer.o
-OBJS		+= mac.o mac_stm32fxx7.o phy.o phy_ksz8051mll.o
+OBJS		+= ../../ethernet/mac.o ../../ethernet/mac_stm32fxx7.o ../../ethernet/phy.o ../../ethernet/phy_ksz8051mll.o
 
-OBJS            += crc_common_all.o dac_common_all.o dma_common_l1f013.o \
-                   gpio_common_all.o i2c_common_v1.o iwdg_common_all.o \
-                   pwr_common_v1.o spi_common_all.o spi_common_l1f124.o \
-                   timer_common_all.o usart_common_all.o usart_common_f124.o \
-                   rcc_common_all.o exti_common_all.o \
-                   flash_common_f01.o
+OBJS            += ../common/crc_common_all.o ../common/dac_common_all.o ../common/dma_common_l1f013.o \
+                   ../common/gpio_common_all.o ../common/i2c_common_v1.o ../common/iwdg_common_all.o \
+                   ../common/pwr_common_v1.o ../common/spi_common_all.o ../common/spi_common_l1f124.o \
+                   ../common/timer_common_all.o ../common/usart_common_all.o ../common/usart_common_f124.o \
+                   ../common/rcc_common_all.o ../common/exti_common_all.o \
+                   ../common/flash_common_f01.o ../common/st_usbfs_core.o 
 
-OBJS            += usb.o usb_control.o usb_standard.o usb_msc.o
-OBJS		+= usb_fx07_common.o usb_f107.o
-OBJS		+= st_usbfs_core.o st_usbfs_v1.o
+OBJS            += ../../usb/usb.o ../../usb/usb_control.o ../../usb/usb_standard.o ../../usb/usb_msc.o
+OBJS		+= ../../usb/usb_fx07_common.o ../../usb/usb_f107.o
+OBJS		+= ../st_usbfs_v1.o
 
 VPATH += ../../usb:../:../../cm3:../common:../../ethernet
 

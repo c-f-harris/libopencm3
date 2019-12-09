@@ -24,7 +24,8 @@ Q := @
 endif
 
 # common objects
-OBJS += vector.o systick.o scb.o nvic.o assert.o sync.o dwt.o
+OBJS += ../../cm3/vector.o ../../cm3/systick.o ../../cm3/scb.o
+OBJS += ../../cm3/nvic.o ../../cm3/assert.o ../../cm3/sync.o ../../cm3/dwt.o
 
 # Slightly bigger .elf files but gains the ability to decode macros
 DEBUG_FLAGS ?= -ggdb3

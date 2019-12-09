@@ -148,7 +148,13 @@ def main():
     else:
         remove = False
     infile = sys.argv[1]
+
+    # Removing semi-colon if added to the arguments
+    if infile[-1] == ';':
+        infile = infile[:-1]
+
     if not infile.startswith('./include/libopencm3/') or not infile.endswith('/irq.json'):
+        print('\ninfile = %s\n\n' % infile)
         raise ValueError("Argument must match ./include/libopencm3/**/irq.json")
     nvic_h = infile.replace('irq.json', 'nvic.h')
     vector_nvic_c = infile.replace('./include/libopencm3/', './lib/').replace('irq.json', 'vector_nvic.c')
